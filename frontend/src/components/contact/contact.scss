@@ -1,0 +1,158 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  height: 690px;
+  background: linear-gradient(to right, #ff9999, #0e9fff);
+
+
+  padding-bottom: 100px;
+
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: white;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #ff6600;
+    }
+  }
+
+  .list {
+    width: 100%;
+    max-width: 250px;
+    padding: 15px;
+    margin-top: 10px;
+    border: 5px solid rgb(237, 236, 236);
+    border-radius: 10px;
+    background: linear-gradient(to top, #ff9999, #0e9fff);
+
+    .item {
+      font-size: 20px;
+      padding: 10px;
+      margin-bottom: 15px;
+
+      h3 {
+        padding-left: 25px;
+        margin-bottom: 5px;
+        color: #07212d;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #ff6600;
+        }
+      }
+
+      input {
+        width: calc(100% - 20px);
+        padding: 8px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 2px solid rgb(224, 247, 255);
+        transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+        &:focus {
+          outline: none;
+          border-color: #66afe9;
+          background-color: #555555;
+        }
+      }
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #ff6600;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #e55a00;
+      transform: scale(1.05);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    h1 {
+      font-size: 32px;
+    }
+
+    .list {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 28px;
+    }
+
+    .list {
+      width: 95%;
+    }
+
+    .item {
+      font-size: 18px;
+
+      input {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 24px;
+    }
+
+    .list {
+      width: 80%;
+    }
+
+    .item {
+      font-size: 16px;
+
+      input {
+        font-size: 12px;
+      }
+    }
+
+    button {
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 280px) {
+  
+
+    h1 {
+      font-size: 24px;
+    }
+
+    .list {
+      width: 70%;
+      margin-left: 18px;
+    }
+
+    .item {
+      font-size: 16px;
+
+      input {
+        font-size: 12px;
+      }
+    }
+
+    button {
+      font-size: 16px;
+    }
+  }
+}
