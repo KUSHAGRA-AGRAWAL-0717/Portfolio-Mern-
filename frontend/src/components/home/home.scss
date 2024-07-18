@@ -3,9 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 600px;
+  height: 530px;
   gap: 112px;
-  background: linear-gradient(to right, #ff9999, #0e9fff);
+
   box-sizing: border-box;
   padding-top: 55px;
 
@@ -71,10 +71,10 @@
   }
 
   @media (max-width: 1024px) {
-    flex-direction: column;
-    height: auto;
+    display: flex;
+    flex-direction: row;
     gap: 50px;
-    padding: 20px;
+    margin: 10px;
 
     .first {
       .icons {
@@ -94,6 +94,9 @@
   }
 
   @media (max-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    padding-top: 160px;
     .first {
       .ph {
         height: 150px;
@@ -122,11 +125,13 @@
 
   @media (max-width: 480px) {
     gap: 20px;
-
+    height: auto;
+    display: flex;
+    flex-direction: row;
     .first {
       .ph {
-        height: 120px;
-        width: 120px;
+        height: 100px;
+        width: 100px;
       }
 
       .icons {
@@ -150,12 +155,10 @@
   }
 
   @media (max-width: 280px) {
-    .nav{
-      height: 240px;
-    }
     gap: 10px;
     flex-direction: row;
-    margin-top: 144px;
+    margin-top: 4px;
+    height: auto;
 
     .first {
       .ph {

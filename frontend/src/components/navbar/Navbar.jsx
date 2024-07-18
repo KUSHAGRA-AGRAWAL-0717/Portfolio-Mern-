@@ -1,10 +1,15 @@
 import "./navbar.scss";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   return (
     <div className="container">
-      <Link to="/" style={{ textDecoration: "none" }}>
+      <Link
+        to="home"
+        smooth={true}
+        duration={500}
+        style={{ textDecoration: "none" }}
+      >
         <div className="search">
           <p>KUSHAGRA</p>
           <p>AGRAWAL</p>
@@ -12,17 +17,36 @@ const Navbar = () => {
       </Link>
 
       <div className="second">
-        <Link to="/home" style={{ textDecoration: "none" }}>
+        <Link
+          to="home"
+          smooth={true}
+          duration={500}
+          style={{ textDecoration: "none" }}
+        >
           <div className="item">Home</div>
         </Link>
-        <Link to="/about" style={{ textDecoration: "none" }}>
+        <Link
+          to="about"
+          smooth={true}
+          duration={500}
+          style={{ textDecoration: "none" }}
+        >
           <div className="item">About</div>
         </Link>
-        <Link to="/projects" style={{ textDecoration: "none" }}>
+        <Link
+          to="projects"
+          smooth={true}
+          duration={500}
+          style={{ textDecoration: "none" }}
+        >
           <div className="item">Projects</div>
         </Link>
-
-        <Link to="/contact" style={{ textDecoration: "none" }}>
+        <Link
+          to="contact"
+          smooth={true}
+          duration={500}
+          style={{ textDecoration: "none" }}
+        >
           <div className="item">Contact</div>
         </Link>
       </div>

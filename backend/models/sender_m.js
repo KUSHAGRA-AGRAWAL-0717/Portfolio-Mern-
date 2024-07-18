@@ -1,22 +1,23 @@
 import mongoose from "mongoose";
-const senderSchema=new mongoose.Schema({
+const senderSchema = new mongoose.Schema(
+  {
     fullname: {
-        type:String,
-        required:true
+      type: String,
+      required: true,
     },
-    email:{
-        type:String,
-        required:true
+    email: {
+      type: String,
+      required: true,
     },
-    phone:{
-        type:Number,
-        required:true
+    phone: {
+      type: Number,
+      required: true,
     },
-    desc:{
-        type:String
+    desc: {
+      type: String,
     },
+  },
+  { timestamps: true }
+);
 
-},
-{ timestamps: true })
-
-export default mongoose.model('Sender',senderSchema)
+export default mongoose.model("Sender", senderSchema);

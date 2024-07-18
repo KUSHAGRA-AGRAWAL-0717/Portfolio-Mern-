@@ -3,11 +3,9 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import Navbar from "../navbar/Navbar";
 const Home = () => {
   return (
     <div>
-      <div className="nav"><Navbar/></div>
       <div className="home">
         <div className="first">
           <div className="ph">

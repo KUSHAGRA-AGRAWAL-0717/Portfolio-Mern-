@@ -1,24 +1,16 @@
-import "./App.css"
-import About from "./components/about/About";
-import Contact from "./components/contact/Contact";
-import Home from "./components/home/Home";
-import Project from "./components/projects/Project";
+import "./App.css";
 import Page from "./pages/first/Page";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      
+    <div
+      className="App"
+      style={{ background: "linear-gradient(to right, #ff9999, #0e9fff)" }}
+    >
       <Router>
         <Routes>
-          <Route path="/">
-          <Route index element={<Page/>}/>
-          <Route path="home" element={<Home/>}></Route>
-          <Route path="projects" element={<Project/>}></Route>
-          <Route path="contact" element={<Contact />}></Route>
-          <Route path="about" element={<About />}></Route> 
-          </Route>
+          <Route path="/" element={<Page />} />
         </Routes>
       </Router>
     </div>

@@ -1,8 +1,7 @@
-import Navbar from "../navbar/Navbar";
 import "./contact.scss";
 import toast from "react-hot-toast";
 import { useState } from "react";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Contact = () => {
@@ -10,7 +9,7 @@ const Contact = () => {
     fullname: "",
     email: "",
     phone: "",
-    desc: ""
+    desc: "",
   });
 
   const navigate = useNavigate();
@@ -18,14 +17,14 @@ const Contact = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/auth/register", sender, {
+      const res = await axios.post("/auth/sendMail", sender, {
         headers: {
-          'Content-Type': "application/json"
+          "Content-Type": "application/json",
         },
-        withCredentials: true
+        withCredentials: true,
       });
       if (res.data.success) {
-        navigate("/home");
+        navigate("/");
         toast.success(res.data.message);
       }
     } catch (error) {
@@ -36,13 +35,12 @@ const Contact = () => {
       fullname: "",
       email: "",
       phone: "",
-      desc: ""
+      desc: "",
     });
   };
 
   return (
     <div>
-      <Navbar />
       <div className="contact">
         <h1>Contact</h1>
         <form onSubmit={onSubmitHandler}>
@@ -51,7 +49,9 @@ const Contact = () => {
               <h3>Full Name</h3>
               <input
                 value={sender.fullname}
-                onChange={(e) => setSender({ ...sender, fullname: e.target.value })}
+                onChange={(e) =>
+                  setSender({ ...sender, fullname: e.target.value })
+                }
                 placeholder="Kabi...."
                 type="text"
               />
@@ -60,7 +60,9 @@ const Contact = () => {
               <h3>Phone</h3>
               <input
                 value={sender.phone}
-                onChange={(e) => setSender({ ...sender, phone: e.target.value })}
+                onChange={(e) =>
+                  setSender({ ...sender, phone: e.target.value })
+                }
                 placeholder="xxxxxxxx"
                 type="text"
               />
@@ -69,14 +71,17 @@ const Contact = () => {
               <h3>Email</h3>
               <input
                 value={sender.email}
-                onChange={(e) => setSender({ ...sender, email: e.target.value })}
+                onChange={(e) =>
+                  setSender({ ...sender, email: e.target.value })
+                }
                 type="text"
                 placeholder="hritik@gmail.com"
               />
             </div>
             <div className="item">
               <input
-                style={{ height: "200px" }}
+                style={{ height: "80px" }}
+                placeholder="Hi I am the H...."
                 type="text"
                 value={sender.desc}
                 onChange={(e) => setSender({ ...sender, desc: e.target.value })}

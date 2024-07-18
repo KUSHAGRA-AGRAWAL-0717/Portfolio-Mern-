@@ -1,11 +1,11 @@
 .project {
   display: flex;
-  background: linear-gradient(to right, #ff9999, #0e9fff);
 
   align-items: center;
   flex-direction: column;
-  
+
   box-sizing: border-box;
+  padding-top: 70px;
 
   .top {
     width: 100%;
@@ -27,7 +27,7 @@
 
   .bottom {
     width: 100%;
-    
+
     display: flex;
     justify-content: center;
 
@@ -41,7 +41,14 @@
         display: flex;
         flex-direction: column;
         margin: 12px;
-        background: linear-gradient(to top, #ff9999, #0e9fff);
+        // background: linear-gradient(to top, #ff9999, #0e9fff);
+        background: rgb(2, 0, 36);
+        background: linear-gradient(
+          357deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(9, 28, 121, 1) 38%,
+          rgba(0, 212, 255, 1) 100%
+        );
 
         padding: 15px;
         border-radius: 10px;
@@ -87,7 +94,6 @@
           span {
             color: white;
             font-size: 1rem;
-            
           }
         }
       }
@@ -120,8 +126,8 @@
         width: 90%;
         align-items: center;
       }
-        
-      .item{
+
+      .item {
         width: 50%;
       }
       .item h3 {
@@ -154,13 +160,13 @@
     }
   }
   @media (max-width: 280px) {
+    height: auto;
     .top h1 {
       font-size: 1.5rem;
     }
-    .item{
+    .item {
       width: 50%;
     }
-   
 
     .bottom {
       padding-bottom: 0px;
@@ -171,15 +177,13 @@
         }
       }
 
-      
-      .list{
-        .item{
+      .list {
+        .item {
           .inside span {
             font-size: 12px;
           }
         }
       }
-      
     }
   }
 }
