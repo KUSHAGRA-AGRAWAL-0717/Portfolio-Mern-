@@ -14,21 +14,49 @@ const Contact = () => {
 
   const navigate = useNavigate();
 
+  // const onSubmitHandler = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const res = await axios.post("/auth/sendMail", sender, {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       withCredentials: true,
+  //     });
+  //     if (res.data.success) {
+  //       navigate("/");
+  //       toast.success(res.data.message);
+  //     }
+  //   } catch (error) {
+  //     toast.error(error.response.data.message);
+  //     console.log(error);
+  //   }
+  //   setSender({
+  //     fullname: "",
+  //     email: "",
+  //     phone: "",
+  //     desc: "",
+  //   });
+  // };
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/auth/sendMail", sender, {
+      const res = await axios.post("http://localhost:4400/backend/auth/sendMail", sender, {
         headers: {
           "Content-Type": "application/json",
         },
         withCredentials: true,
       });
-      if (res.data.success) {
+      if (res && res.data && res.data.success) {
         navigate("/");
         toast.success(res.data.message);
       }
     } catch (error) {
-      toast.error(error.response.data.message);
+      if (error.response && error.response.data) {
+        toast.error(error.response.data.message);
+      } else {
+        toast.error("An unexpected error occurred.");
+      }
       console.log(error);
     }
     setSender({
@@ -38,6 +66,8 @@ const Contact = () => {
       desc: "",
     });
   };
+  
+  
 
   return (
     <div>
@@ -96,3 +126,5 @@ const Contact = () => {
 };
 
 export default Contact;
+// ,
+//   "proxy": "http://localhost:4400/backend"
