@@ -1,9 +1,20 @@
 // import express from "express";
 // import dotenv from "dotenv";
 // import mongoose from "mongoose";
+// import cors from "cors";
 // import gmail from "./routes/gmail.js";
+
 // const app = express();
 // dotenv.config();
+
+// app.use(cors({
+//   origin: process.env.BASE_URL, 
+//   credentials: true
+// }));
+
+// app.use(express.json());
+
+// app.use("/backend/auth", gmail);
 
 // app.use((err, req, res, next) => {
 //   const errorStatus = err.status || 500;
@@ -15,8 +26,9 @@
 //     stack: err.stack,
 //   });
 // });
+// port=process.env.PORT || 3000;
 
-// app.listen(4400, async () => {
+// app.listen(port, async () => {
 //   try {
 //     await mongoose.connect(process.env.MONGO_URL);
 //     console.log("mongodb connected");
@@ -29,10 +41,6 @@
 // mongoose.connection.on("disconnected", () => {
 //   console.log("mongodb disconnected");
 // });
-// app.use(express.json());
-
-// app.use("/backend/auth", gmail);
-
 
 
 import express from "express";
@@ -44,15 +52,16 @@ import gmail from "./routes/gmail.js";
 const app = express();
 dotenv.config();
 
+// Configure CORS
 app.use(cors({
-  origin: process.env.BASE_URL, 
+  origin: '*', 
   credentials: true
 }));
 
 app.use(express.json());
-
 app.use("/backend/auth", gmail);
 
+// Error handling middleware
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
   const errorMessage = err.message || "Something went wrong!";
@@ -64,14 +73,18 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(4400, async () => {
+// Start server
+const port = process.env.PORT || 3000;
+
+app.listen(port, async () => {
   try {
     await mongoose.connect(process.env.MONGO_URL);
     console.log("mongodb connected");
   } catch (err) {
-    throw err;
+    console.error(err);
+    process.exit(1); 
   }
-  console.log("connected to the backend");
+  console.log(`Server running on port ${port}`);
 });
 
 mongoose.connection.on("disconnected", () => {

@@ -43,7 +43,7 @@ export const sendGmail = async (req, res, next) => {
       success: true,
     });
   } catch (error) {
-    console.error("Error sending email or saving to database:", error);
+    console.log("Error sending email or saving to database:", error);
     return next(createError(400, "Email is not sent"));
   }
 };

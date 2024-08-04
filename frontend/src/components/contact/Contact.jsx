@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+const BASE_URL="https://portfolio-backend-z1o7.onrender.com"
+// const BASE_URL="http://localhost:4400"
 const Contact = () => {
   const [sender, setSender] = useState({
     fullname: "",
@@ -13,35 +15,10 @@ const Contact = () => {
   });
 
   const navigate = useNavigate();
-
-  // const onSubmitHandler = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const res = await axios.post("/auth/sendMail", sender, {
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       withCredentials: true,
-  //     });
-  //     if (res.data.success) {
-  //       navigate("/");
-  //       toast.success(res.data.message);
-  //     }
-  //   } catch (error) {
-  //     toast.error(error.response.data.message);
-  //     console.log(error);
-  //   }
-  //   setSender({
-  //     fullname: "",
-  //     email: "",
-  //     phone: "",
-  //     desc: "",
-  //   });
-  // };
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:4400/backend/auth/sendMail", sender, {
+      const res = await axios.post(`${BASE_URL}/backend/auth/sendMail`, sender, {
         headers: {
           "Content-Type": "application/json",
         },
