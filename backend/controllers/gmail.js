@@ -39,7 +39,7 @@ export const sendGmail = async (req, res, next) => {
     await newSender.save();
 
     res.status(200).send({
-      message: "Your response has been sent to Kushagra and saved.",
+      message: "Your response has been sent to Kushagra and saved Thanks.",
       success: true,
     });
   } catch (error) {

@@ -54,7 +54,7 @@ dotenv.config();
 
 // Configure CORS
 app.use(cors({
-  origin: '*', 
+  origin: 'https://kushagra-agrawal-portfolio.netlify.app', 
   credentials: true
 }));
 
